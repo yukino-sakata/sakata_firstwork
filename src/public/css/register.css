@@ -1,4 +1,4 @@
-.content__login {
+.content__register {
     width: 500px;
     height: 600px;
     margin: 0 auto;
@@ -6,18 +6,20 @@
     text-align: center;
 }
 
-.login__header {
+.register__header {
     font-size: 20px;
     font-weight: bold;
     padding: 15px 0 0 0;
 }
 
-.login-item {
+.register-item {
     padding: 10px 0;
 }
 
-.login-item__email,
-.login-item__pass {
+.register-item__name,
+.register-item__email,
+.register-item__pass,
+.register-item__pass-confirmation {
     width: 350px;
     height: 45px;
     padding: 5px 15px;
@@ -28,7 +30,7 @@
     background: #EEE;
 }
 
-.login-button {
+.register-button {
     width: 350px;
     height: 45px;
     padding: 5px 15px;
@@ -36,19 +38,19 @@
     border-radius: 5px;
     color: #FFF;
     background: #0242FF;
-    cursor: pointer;
 }
 
 .content__link {
     font-size: 14px;
     line-height: 5px;
+    padding-bottom: 200px;
 }
 
 .link-text {
     color: #777;
 }
 
-.link-register {
+.link-login {
     text-decoration: none;
     color: #0242FF;
 }

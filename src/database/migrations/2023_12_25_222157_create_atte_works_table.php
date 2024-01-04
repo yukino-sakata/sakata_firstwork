@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateAtteWorksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('atte_works', function (Blueprint $table){
             $table -> id();
-            $table -> string('name');
-            $table -> string('email')->unique();
-            $table -> string('pass');
+            $table -> foreignId('atte_user_id')->constrained()->cascadeOnDelete();
+            $table -> date('date');
+            $table -> timestamp('work-start_at');
+            $table -> timestamp('work-finish_at')->nullable();
             $table -> timestamp('created_at')->useCurrent()->nullable();
             $table -> timestamp('updated_at')->useCurrent()->nullable();
         });
@@ -30,6 +31,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('works');
         Schema::dropIfExists('users');
     }
 }
